@@ -58,6 +58,7 @@ import me.moros.bending.ability.earth.sequences.EarthPillars;
 import me.moros.bending.ability.earth.sequences.EarthShards;
 import me.moros.bending.ability.fire.Blaze;
 import me.moros.bending.ability.fire.Combustion;
+import me.moros.bending.ability.fire.FireBall;
 import me.moros.bending.ability.fire.FireBlast;
 import me.moros.bending.ability.fire.FireBreath;
 import me.moros.bending.ability.fire.FireBurst;
@@ -352,6 +353,9 @@ public final class AbilityInitializer {
   }
 
   private void initFire() {
+    abilities.add(AbilityDescription.builder("FireBall", FireBall::new)
+      .element(FIRE).activation(ATTACK).build());
+
     AbilityDescription fireBlast = AbilityDescription.builder("FireBlast", FireBlast::new)
       .element(FIRE).activation(ATTACK, SNEAK).build();
     abilities.add(fireBlast);
